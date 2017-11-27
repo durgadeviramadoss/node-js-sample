@@ -1,8 +1,9 @@
 node {
-   echo 'Hello Docker-Arun1'
+   echo 'Hello Docker'
    git credentialsId: '9010883c-bf76-4a03-9fad-52550ce537b2', url: 'https://github.com/durgadeviramadoss/node-js-sample.git'
    
     stage 'Build'
+        cleanWs()
         sh 'sudo rm -rf node-js-sample'
         sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
     
@@ -19,6 +20,6 @@ node {
 
     stage 'Kubernetes Deploy'
         sh 'kubectl create -f service.yml'
-        sh 'kubectl create -f deploy.yml'
+        sh 'kubectl replace -f deploy.yml --record'
         sh 'kubectl get pods'
 }
