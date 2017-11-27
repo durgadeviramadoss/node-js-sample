@@ -5,9 +5,11 @@ node {
         cleanWs()
         sh 'sudo rm -rf node-js-sample'
         sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
+        sh 'cd node-js-sample && pwd'
     
     stage 'Docker image build'
-        sh 'sudo docker build -t nodejs-image-new .'
+        sh 'cd node-js-sample && pwd'
+        sh 'cd node-js-sample &&  sudo docker build -t nodejs-image-new .'
         
     stage 'Docker image tag'
         sh 'echo $(aws ecr get-login --region us-east-1 --registry-ids 958306274796) > file.txt'
