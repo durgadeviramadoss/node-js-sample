@@ -1,5 +1,5 @@
 node {
-   echo 'Hello Docker-Arun'
+   echo 'Hello Docker-Arun1'
    git credentialsId: '9010883c-bf76-4a03-9fad-52550ce537b2', url: 'https://github.com/durgadeviramadoss/node-js-sample.git'
    
     stage 'Build'
