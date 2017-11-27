@@ -20,6 +20,6 @@ node {
 
     stage 'Kubernetes Deploy'
         sh 'echo Hello'
-        sh 'kubectl replace -f deploy.yml --record'
+        sh 'kubectl replace -f node-js-sample/deploy.yml --record'
         sh 'kubectl get pods'
 }
