@@ -19,7 +19,7 @@ node {
         sh 'sudo docker push 958306274796.dkr.ecr.us-east-1.amazonaws.com/demo-jenkins-pipeline:nodejs-image-new-v1'
 
     stage 'Kubernetes Deploy'
-        sh 'kubectl delete -f node-js-sample/service.yml && kubectl create -f service.yml'
+        sh ' kubectl apply -f service.yml'
         sh 'echo Hello'
         sh 'kubectl replace -f deploy.yml --record'
         sh 'kubectl get pods'
