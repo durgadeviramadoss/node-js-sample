@@ -1,13 +1,12 @@
 node {
    echo 'Hello Docker'
-    stage 'Read file'
-        sh 'acc=$(cat Account)'
-        sh 'echo $acc'
     stage 'Build'
         cleanWs()
         sh 'sudo rm -rf node-js-sample'
         sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
         sh 'cd node-js-sample && pwd'
+        sh 'acc=$(cat Account)'
+        sh 'echo $acc'
     
     stage 'Docker image build'
         sh 'cd node-js-sample &&  sudo docker build -t nodejs-image-new .'
