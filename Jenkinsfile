@@ -5,7 +5,7 @@ node {
         sh 'sudo rm -rf node-js-sample'
         sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
         sh 'cd node-js-sample && pwd'
-        sh 'acc=$(cat node-js-sample/Account)'
+        sh 'acc=$(cat node-js-sample/account)'
         sh 'echo $acc'
     
     stage 'Docker image build'
