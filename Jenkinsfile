@@ -8,7 +8,7 @@ node {
         sh 'cd node-js-sample && pwd'
         sh 'acc=$(cat node-js-sample/account)'
         sh 'echo $acc'
-    env.Account = "$(cat node-js-sample/account)"
+    env.Account = $(cat node-js-sample/account)
     stage 'Docker image build'
         sh 'cd node-js-sample &&  sudo docker build -t nodejs-image-new .'
         
